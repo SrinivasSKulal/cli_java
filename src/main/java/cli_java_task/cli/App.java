@@ -123,6 +123,9 @@ class TaskManager {
             logger.info(INVALID_TASK_INDEX );
         }
     }
+    public List<Task> getTasks() {
+        return tasks;
+    }
 }
 
 public class App {
