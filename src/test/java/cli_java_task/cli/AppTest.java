@@ -9,26 +9,14 @@ import java.util.List;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
+public class AppTest extends TestCase {
     private TaskManager taskManager;
 
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest(String testName)
-    {
+    public AppTest(String testName) {
         super(testName);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
+    public static Test suite() {
         return new TestSuite(AppTest.class);
     }
 
@@ -38,11 +26,7 @@ public class AppTest
         taskManager = new TaskManager();
     }
 
-    /**
-     * Test adding a task
-     */
-    public void testAddTask()
-    {
+    public void testAddTask() {
         Task task = new Task("Test Task", "Description", "2025-04-10", "High");
         taskManager.addTask(task);
 
@@ -51,11 +35,7 @@ public class AppTest
         assertEquals("Test Task", tasks.get(0).getTitle());
     }
 
-    /**
-     * Test editing a task
-     */
-    public void testEditTask()
-    {
+    public void testEditTask() {
         Task task = new Task("Old Task", "Old Description", "2025-04-10", "Low");
         taskManager.addTask(task);
 
@@ -67,11 +47,18 @@ public class AppTest
         assertEquals("Updated Description", tasks.get(0).getDescription());
     }
 
-    /**
-     * Test deleting a task
-     */
-    public void testDeleteTask()
-    {
+    // Improved: Test editing a task with an invalid index
+    public void testEditTaskWithInvalidIndex() {
+        Task task = new Task("Valid Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+
+        // Invalid index (out of bounds)
+        taskManager.editTask(5, task);
+        List<Task> tasks = taskManager.getTasks();
+        assertEquals(1, tasks.size()); // The task count should remain 1
+    }
+
+    public void testDeleteTask() {
         Task task = new Task("Task to Delete", "Description", "2025-04-10", "Medium");
         taskManager.addTask(task);
 
@@ -81,11 +68,18 @@ public class AppTest
         assertTrue(tasks.isEmpty());
     }
 
-    /**
-     * Test marking a task as complete
-     */
-    public void testMarkTaskAsComplete()
-    {
+    // Improved: Test deleting a task with an invalid index
+    public void testDeleteTaskWithInvalidIndex() {
+        Task task = new Task("Valid Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+
+        // Invalid index (out of bounds)
+        taskManager.deleteTask(5);
+        List<Task> tasks = taskManager.getTasks();
+        assertEquals(1, tasks.size()); // The task should not be deleted
+    }
+
+    public void testMarkTaskAsComplete() {
         Task task = new Task("Incomplete Task", "Description", "2025-04-10", "Low");
         taskManager.addTask(task);
 
@@ -95,20 +89,27 @@ public class AppTest
         assertTrue(tasks.get(0).isCompleted());
     }
 
-    /**
-     * Test invalid task index handling
-     */
-    public void testInvalidTaskIndex()
-    {
+    // Improved: Test marking a task as complete with an invalid index
+    public void testMarkTaskAsCompleteWithInvalidIndex() {
+        Task task = new Task("Incomplete Task", "Description", "2025-04-10", "Low");
+        taskManager.addTask(task);
+
+        // Invalid index (out of bounds)
+        taskManager.markTaskAsComplete(5);
+        List<Task> tasks = taskManager.getTasks();
+        assertFalse(tasks.get(0).isCompleted()); // The task should not be marked complete
+    }
+
+    public void testInvalidTaskIndex() {
         Task task = new Task("Valid Task", "Description", "2025-04-10", "High");
         taskManager.addTask(task);
 
-        try {
-            taskManager.editTask(5, task);
-            taskManager.deleteTask(5);
-            taskManager.markTaskAsComplete(5);
-        } catch (Exception e) {
-            fail("Exception should not be thrown for invalid task index.");
-        }
+        // Try editing, deleting, and marking a task as complete with an invalid index
+        taskManager.editTask(5, task);  // Invalid index
+        taskManager.deleteTask(5);      // Invalid index
+        taskManager.markTaskAsComplete(5);  // Invalid index
+
+        // We do not expect an exception to be thrown, so no assertion here
+        // But you can add logging assertions if needed
     }
 }
