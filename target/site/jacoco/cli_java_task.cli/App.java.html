@@ -27,32 +27,32 @@ class Task {
     }
 
     public void setTitle(String title) {
-<span class="nc" id="L30">        this.title = title;</span>
-<span class="nc" id="L31">    }</span>
+<span class="fc" id="L30">        this.title = title;</span>
+<span class="fc" id="L31">    }</span>
 
     public String getDescription() {
 <span class="fc" id="L34">        return description;</span>
     }
 
     public void setDescription(String description) {
-<span class="nc" id="L38">        this.description = description;</span>
-<span class="nc" id="L39">    }</span>
+<span class="fc" id="L38">        this.description = description;</span>
+<span class="fc" id="L39">    }</span>
 
     public String getDueDate() {
-<span class="nc" id="L42">        return dueDate;</span>
+<span class="fc" id="L42">        return dueDate;</span>
     }
 
     public void setDueDate(String dueDate) {
-<span class="nc" id="L46">        this.dueDate = dueDate;</span>
-<span class="nc" id="L47">    }</span>
+<span class="fc" id="L46">        this.dueDate = dueDate;</span>
+<span class="fc" id="L47">    }</span>
 
     public String getPriority() {
-<span class="nc" id="L50">        return priority;</span>
+<span class="fc" id="L50">        return priority;</span>
     }
 
     public void setPriority(String priority) {
-<span class="nc" id="L54">        this.priority = priority;</span>
-<span class="nc" id="L55">    }</span>
+<span class="fc" id="L54">        this.priority = priority;</span>
+<span class="fc" id="L55">    }</span>
 
     public boolean isCompleted() {
 <span class="fc" id="L58">        return completed;</span>
@@ -64,18 +64,18 @@ class Task {
 
     @Override
     public String toString() {
-<span class="nc" id="L67">        return &quot;Title: &quot; + title + &quot;\n&quot;</span>
+<span class="fc" id="L67">        return &quot;Title: &quot; + title + &quot;\n&quot;</span>
                 + &quot;Description: &quot; + description + &quot;\n&quot;
                 + &quot;Due Date: &quot; + dueDate + &quot;\n&quot;
                 + &quot;Priority: &quot; + priority + &quot;\n&quot;
-<span class="nc bnc" id="L71" title="All 2 branches missed.">                + &quot;Status: &quot; + (completed ? &quot;Completed&quot; : &quot;Not Completed&quot;) + &quot;\n&quot;;</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">                + &quot;Status: &quot; + (completed ? &quot;Completed&quot; : &quot;Not Completed&quot;) + &quot;\n&quot;;</span>
     }
 }
 
 class TaskManager {
     private List&lt;Task&gt; tasks;
 <span class="fc" id="L77">    protected static final Logger logger = LogManager.getLogger();</span>
-    private static final String INVALID_TASK_INDEX =&quot;INVALID_TASK_INDEX  task index.&quot;;
+    private static final String INVALID_TASK_INDEX =&quot;invalid task index.&quot;;
 <span class="fc" id="L79">    public TaskManager() {</span>
 <span class="fc" id="L80">        this.tasks = new ArrayList&lt;&gt;();</span>
 <span class="fc" id="L81">    }</span>
@@ -84,121 +84,124 @@ class TaskManager {
 <span class="fc" id="L84">        tasks.add(task);</span>
 <span class="fc" id="L85">    }</span>
 
-    public void displayTasks() {
-<span class="nc bnc" id="L88" title="All 2 branches missed.">        if (tasks.isEmpty()) {</span>
-<span class="nc" id="L89">            logger.info(&quot;No tasks found.&quot;);</span>
-<span class="nc" id="L90">            return;</span>
+    public String displayTasks() {
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (tasks.isEmpty()) {</span>
+<span class="fc" id="L89">            logger.info(&quot;No tasks found.&quot;);</span>
+<span class="fc" id="L90">            return &quot;Displayed Nothing&quot;;</span>
         }
-<span class="nc" id="L92">        logger.info(&quot;Tasks:&quot;);</span>
-<span class="nc bnc" id="L93" title="All 2 branches missed.">        for (Task task : tasks) {</span>
-<span class="nc" id="L94">            logger.info(task);</span>
-<span class="nc" id="L95">        }</span>
-<span class="nc" id="L96">    }</span>
+<span class="fc" id="L92">        logger.info(&quot;Tasks:&quot;);</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        for (Task task : tasks) {</span>
+<span class="fc" id="L94">            logger.info(task);</span>
+
+<span class="fc" id="L96">        }</span>
+<span class="fc" id="L97">        return &quot;Displayed All Tasks&quot;;</span>
+    }
 
     public void editTask(int index, Task updatedTask) {
-<span class="pc bpc" id="L99" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
-<span class="fc" id="L100">            tasks.set(index, updatedTask);</span>
-<span class="fc" id="L101">            logger.info(&quot;Task updated successfully.&quot;);</span>
+<span class="pc bpc" id="L101" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
+<span class="fc" id="L102">            tasks.set(index, updatedTask);</span>
+<span class="fc" id="L103">            logger.info(&quot;Task updated successfully.&quot;);</span>
         } else {
-<span class="fc" id="L103">           logger.info(INVALID_TASK_INDEX );</span>
+<span class="fc" id="L105">           logger.info(INVALID_TASK_INDEX );</span>
         }
-<span class="fc" id="L105">    }</span>
+<span class="fc" id="L107">    }</span>
 
     public void deleteTask(int index) {
-<span class="pc bpc" id="L108" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
-<span class="fc" id="L109">            tasks.remove(index);</span>
-<span class="fc" id="L110">            logger.info(&quot;Task deleted successfully.&quot;);</span>
+<span class="pc bpc" id="L110" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
+<span class="fc" id="L111">            tasks.remove(index);</span>
+<span class="fc" id="L112">            logger.info(&quot;Task deleted successfully.&quot;);</span>
         } else {
-<span class="fc" id="L112">            logger.info(INVALID_TASK_INDEX );</span>
+<span class="fc" id="L114">            logger.info(INVALID_TASK_INDEX );</span>
         }
-<span class="fc" id="L114">    }</span>
+<span class="fc" id="L116">    }</span>
 
     public void markTaskAsComplete(int index) {
-<span class="pc bpc" id="L117" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
-<span class="fc" id="L118">            Task task = tasks.get(index);</span>
-<span class="fc" id="L119">            task.setCompleted(true);</span>
-<span class="fc" id="L120">            tasks.set(index, task);</span>
-<span class="fc" id="L121">            logger.info(&quot;Task marked as complete.&quot;);</span>
-<span class="fc" id="L122">        } else {</span>
-<span class="fc" id="L123">            logger.info(INVALID_TASK_INDEX );</span>
+<span class="pc bpc" id="L119" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
+<span class="fc" id="L120">            Task task = tasks.get(index);</span>
+<span class="fc" id="L121">            task.setCompleted(true);</span>
+<span class="fc" id="L122">            tasks.set(index, task);</span>
+<span class="fc" id="L123">            logger.info(&quot;Task marked as complete.&quot;);</span>
+<span class="fc" id="L124">        } else {</span>
+<span class="fc" id="L125">            logger.info(INVALID_TASK_INDEX );</span>
         }
-<span class="fc" id="L125">    }</span>
+<span class="fc" id="L127">    }</span>
     public List&lt;Task&gt; getTasks() {
-<span class="fc" id="L127">        return tasks;</span>
+<span class="fc" id="L129">        return tasks;</span>
     }
 }
 
-<span class="nc" id="L131">public class App {</span>
+<span class="nc" id="L133">public class App {</span>
     public static void main(String[] args) {
-<span class="nc" id="L133">        Scanner scanner = new Scanner(System.in);</span>
-<span class="nc" id="L134">        TaskManager taskManager = new TaskManager();</span>
-<span class="nc" id="L135">        Logger logger = LogManager.getLogger();</span>
+<span class="nc" id="L135">        Scanner scanner = new Scanner(System.in);</span>
+<span class="nc" id="L136">        TaskManager taskManager = new TaskManager();</span>
+<span class="nc" id="L137">        Logger logger = LogManager.getLogger();</span>
 
-<span class="nc" id="L137">        boolean exit = false;</span>
-<span class="nc bnc" id="L138" title="All 2 branches missed.">        while (!exit) {</span>
-<span class="nc" id="L139">            logger.info(&quot;\nTask Management Menu:&quot;);</span>
-<span class="nc" id="L140">            logger.info(&quot;1. View tasks&quot;);</span>
-<span class="nc" id="L141">            logger.info(&quot;2. Add task&quot;);</span>
-<span class="nc" id="L142">            logger.info(&quot;3. Edit task&quot;);</span>
-<span class="nc" id="L143">            logger.info(&quot;4. Delete task&quot;);</span>
-<span class="nc" id="L144">            logger.info(&quot;5. Mark task as complete&quot;);</span>
-<span class="nc" id="L145">            logger.info(&quot;6. Exit&quot;);</span>
-<span class="nc" id="L146">            logger.info(&quot;Enter your choice: &quot;);</span>
-<span class="nc" id="L147">            int choice = scanner.nextInt();</span>
-<span class="nc" id="L148">            scanner.nextLine(); // Consume newline</span>
+<span class="nc" id="L139">        boolean exit = false;</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">        while (!exit) {</span>
+<span class="nc" id="L141">            logger.info(&quot;\nTask Management Menu:&quot;);</span>
+<span class="nc" id="L142">            logger.info(&quot;1. View tasks&quot;);</span>
+<span class="nc" id="L143">            logger.info(&quot;2. Add task&quot;);</span>
+<span class="nc" id="L144">            logger.info(&quot;3. Edit task&quot;);</span>
+<span class="nc" id="L145">            logger.info(&quot;4. Delete task&quot;);</span>
+<span class="nc" id="L146">            logger.info(&quot;5. Mark task as complete&quot;);</span>
+<span class="nc" id="L147">            logger.info(&quot;6. Exit&quot;);</span>
+<span class="nc" id="L148">            logger.info(&quot;Enter your choice: &quot;);</span>
+<span class="nc" id="L149">            int choice = scanner.nextInt();</span>
+<span class="nc" id="L150">            scanner.nextLine(); // Consume newline</span>
 
-<span class="nc bnc" id="L150" title="All 7 branches missed.">            switch (choice) {</span>
+<span class="nc bnc" id="L152" title="All 7 branches missed.">            switch (choice) {</span>
                 case 1:
-<span class="nc" id="L152">                    taskManager.displayTasks();</span>
-<span class="nc" id="L153">                    break;</span>
+<span class="nc" id="L154">                    String output = taskManager.displayTasks();</span>
+<span class="nc" id="L155">                    logger.info(output);</span>
+<span class="nc" id="L156">                    break;</span>
                 case 2:
-<span class="nc" id="L155">                    logger.info(&quot;Enter task title: &quot;);</span>
-<span class="nc" id="L156">                    String title = scanner.nextLine();</span>
-<span class="nc" id="L157">                    logger.info(&quot;Enter task description: &quot;);</span>
-<span class="nc" id="L158">                    String description = scanner.nextLine();</span>
-<span class="nc" id="L159">                    logger.info(&quot;Enter due date: &quot;);</span>
-<span class="nc" id="L160">                    String dueDate = scanner.nextLine();</span>
-<span class="nc" id="L161">                    logger.info(&quot;Enter priority (High/Medium/Low): &quot;);</span>
-<span class="nc" id="L162">                    String priority = scanner.nextLine();</span>
-<span class="nc" id="L163">                    Task newTask = new Task(title, description, dueDate, priority);</span>
-<span class="nc" id="L164">                    taskManager.addTask(newTask);</span>
-<span class="nc" id="L165">                    logger.info(&quot;Task added successfully.&quot;);</span>
-<span class="nc" id="L166">                    break;</span>
+<span class="nc" id="L158">                    logger.info(&quot;Enter task title: &quot;);</span>
+<span class="nc" id="L159">                    String title = scanner.nextLine();</span>
+<span class="nc" id="L160">                    logger.info(&quot;Enter task description: &quot;);</span>
+<span class="nc" id="L161">                    String description = scanner.nextLine();</span>
+<span class="nc" id="L162">                    logger.info(&quot;Enter due date: &quot;);</span>
+<span class="nc" id="L163">                    String dueDate = scanner.nextLine();</span>
+<span class="nc" id="L164">                    logger.info(&quot;Enter priority (High/Medium/Low): &quot;);</span>
+<span class="nc" id="L165">                    String priority = scanner.nextLine();</span>
+<span class="nc" id="L166">                    Task newTask = new Task(title, description, dueDate, priority);</span>
+<span class="nc" id="L167">                    taskManager.addTask(newTask);</span>
+<span class="nc" id="L168">                    logger.info(&quot;Task added successfully.&quot;);</span>
+<span class="nc" id="L169">                    break;</span>
                 case 3:
-<span class="nc" id="L168">                    logger.info(&quot;Enter index of task to edit: &quot;);</span>
-<span class="nc" id="L169">                    int editIndex = scanner.nextInt();</span>
-<span class="nc" id="L170">                    scanner.nextLine(); // Consume newline</span>
-<span class="nc" id="L171">                    logger.info(&quot;Enter new title: &quot;);</span>
-<span class="nc" id="L172">                    String newTitle = scanner.nextLine();</span>
-<span class="nc" id="L173">                    logger.info(&quot;Enter new description: &quot;);</span>
-<span class="nc" id="L174">                    String newDescription = scanner.nextLine();</span>
-<span class="nc" id="L175">                    logger.info(&quot;Enter new due date: &quot;);</span>
-<span class="nc" id="L176">                    String newDueDate = scanner.nextLine();</span>
-<span class="nc" id="L177">                    logger.info(&quot;Enter new priority (High/Medium/Low): &quot;);</span>
-<span class="nc" id="L178">                    String newPriority = scanner.nextLine();</span>
-<span class="nc" id="L179">                    Task updatedTask = new Task(newTitle, newDescription, newDueDate, newPriority);</span>
-<span class="nc" id="L180">                    taskManager.editTask(editIndex, updatedTask);</span>
-<span class="nc" id="L181">                    break;</span>
+<span class="nc" id="L171">                    logger.info(&quot;Enter index of task to edit: &quot;);</span>
+<span class="nc" id="L172">                    int editIndex = scanner.nextInt();</span>
+<span class="nc" id="L173">                    scanner.nextLine(); // Consume newline</span>
+<span class="nc" id="L174">                    logger.info(&quot;Enter new title: &quot;);</span>
+<span class="nc" id="L175">                    String newTitle = scanner.nextLine();</span>
+<span class="nc" id="L176">                    logger.info(&quot;Enter new description: &quot;);</span>
+<span class="nc" id="L177">                    String newDescription = scanner.nextLine();</span>
+<span class="nc" id="L178">                    logger.info(&quot;Enter new due date: &quot;);</span>
+<span class="nc" id="L179">                    String newDueDate = scanner.nextLine();</span>
+<span class="nc" id="L180">                    logger.info(&quot;Enter new priority (High/Medium/Low): &quot;);</span>
+<span class="nc" id="L181">                    String newPriority = scanner.nextLine();</span>
+<span class="nc" id="L182">                    Task updatedTask = new Task(newTitle, newDescription, newDueDate, newPriority);</span>
+<span class="nc" id="L183">                    taskManager.editTask(editIndex, updatedTask);</span>
+<span class="nc" id="L184">                    break;</span>
                 case 4:
-<span class="nc" id="L183">                    logger.info(&quot;Enter index of task to delete: &quot;);</span>
-<span class="nc" id="L184">                    int deleteIndex = scanner.nextInt();</span>
-<span class="nc" id="L185">                    taskManager.deleteTask(deleteIndex);</span>
-<span class="nc" id="L186">                    break;</span>
+<span class="nc" id="L186">                    logger.info(&quot;Enter index of task to delete: &quot;);</span>
+<span class="nc" id="L187">                    int deleteIndex = scanner.nextInt();</span>
+<span class="nc" id="L188">                    taskManager.deleteTask(deleteIndex);</span>
+<span class="nc" id="L189">                    break;</span>
                 case 5:
-<span class="nc" id="L188">                    logger.info(&quot;Enter index of task to mark as complete: &quot;);</span>
-<span class="nc" id="L189">                    int completeIndex = scanner.nextInt();</span>
-<span class="nc" id="L190">                    taskManager.markTaskAsComplete(completeIndex);</span>
-<span class="nc" id="L191">                    break;</span>
-                case 6:
-<span class="nc" id="L193">                    exit = true;</span>
+<span class="nc" id="L191">                    logger.info(&quot;Enter index of task to mark as complete: &quot;);</span>
+<span class="nc" id="L192">                    int completeIndex = scanner.nextInt();</span>
+<span class="nc" id="L193">                    taskManager.markTaskAsComplete(completeIndex);</span>
 <span class="nc" id="L194">                    break;</span>
+                case 6:
+<span class="nc" id="L196">                    exit = true;</span>
+<span class="nc" id="L197">                    break;</span>
                 default:
-<span class="nc" id="L196">                    logger.info(&quot;Invalid choice. Please enter a valid option.&quot;);</span>
+<span class="nc" id="L199">                    logger.info(&quot;Invalid choice. Please enter a valid option.&quot;);</span>
             }
-<span class="nc" id="L198">        }</span>
+<span class="nc" id="L201">        }</span>
 
-<span class="nc" id="L200">        logger.info(&quot;Exiting Task Management App. Goodbye!&quot;);</span>
-<span class="nc" id="L201">        scanner.close();</span>
-<span class="nc" id="L202">    }</span>
+<span class="nc" id="L203">        logger.info(&quot;Exiting Task Management App. Goodbye!&quot;);</span>
+<span class="nc" id="L204">        scanner.close();</span>
+<span class="nc" id="L205">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

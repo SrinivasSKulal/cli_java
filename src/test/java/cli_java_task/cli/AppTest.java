@@ -26,6 +26,51 @@ public class AppTest extends TestCase {
         taskManager = new TaskManager();
     }
 
+    // set test case
+    public void testsetTask(){
+        Task task = new Task("" , "" , "" , "");
+        task.setTitle("Test Title");
+        task.setCompleted(true);
+        task.setDescription("Test Description");
+        task.setDueDate("2025-04-10");
+        task.setPriority("Low");
+        assertEquals("Test Title", task.getTitle());
+        assertEquals(true,task.isCompleted()); 
+        assertEquals("Test Description", task.getDescription());
+        assertEquals("2025-04-10", task.getDueDate());
+        assertEquals("Low", task.getPriority());
+    }
+    // tostring() test
+    public void testToString() {
+        Task task = new Task("Test Title", "Test Description", "2025-04-10", "Low");
+        String expectedString =  "Title: " +task.getTitle() + "\n"
+        + "Description: " + task.getDescription() + "\n"
+        + "Due Date: " + task.getDueDate() + "\n"
+        + "Priority: " + task.getPriority() + "\n"
+        + "Status: " + (task.isCompleted() ? "Completed" : "Not Completed") + "\n"; 
+        assertEquals(expectedString, task.toString());
+    }
+    //no tasks test
+    public void testNoTasks() {
+        TaskManager tasks = new TaskManager();
+        assertTrue(tasks.getTasks().isEmpty());
+    }
+
+    //displaytask
+    public void testDisplayTasks(){
+        TaskManager taskManager = new TaskManager();
+        assertEquals("Displayed Nothing", taskManager.displayTasks());
+
+        Task task1 = new Task("Task 1", "Description 1", "2025-04-10", "High");
+        Task task2 = new Task("Task 2", "Description 2", "2025-04-11", "Medium");
+        taskManager.addTask(task1);
+        taskManager.addTask(task2);
+
+
+        assertEquals("Displayed All Tasks", taskManager.displayTasks());
+    }
+
+
     public void testAddTask() {
         Task task = new Task("Test Task", "Description", "2025-04-10", "High");
         taskManager.addTask(task);
@@ -35,6 +80,8 @@ public class AppTest extends TestCase {
         assertEquals("Test Task", tasks.get(0).getTitle());
     }
 
+
+    // get commands test by assert equal
     public void testEditTask() {
         Task task = new Task("Old Task", "Old Description", "2025-04-10", "Low");
         taskManager.addTask(task);
@@ -45,6 +92,10 @@ public class AppTest extends TestCase {
         List<Task> tasks = taskManager.getTasks();
         assertEquals("Updated Task", tasks.get(0).getTitle());
         assertEquals("Updated Description", tasks.get(0).getDescription());
+        assertEquals("2025-04-15", tasks.get(0).getDueDate());
+        assertEquals("High",tasks.get(0).getPriority() );
+        assertEquals(false,tasks.get(0).isCompleted());
+
     }
 
     // Improved: Test editing a task with an invalid index

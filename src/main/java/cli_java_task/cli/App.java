@@ -75,7 +75,7 @@ class Task {
 class TaskManager {
     private List<Task> tasks;
     protected static final Logger logger = LogManager.getLogger();
-    private static final String INVALID_TASK_INDEX ="INVALID_TASK_INDEX  task index.";
+    private static final String INVALID_TASK_INDEX ="invalid task index.";
     public TaskManager() {
         this.tasks = new ArrayList<>();
     }
@@ -84,15 +84,17 @@ class TaskManager {
         tasks.add(task);
     }
 
-    public void displayTasks() {
+    public String displayTasks() {
         if (tasks.isEmpty()) {
             logger.info("No tasks found.");
-            return;
+            return "Displayed Nothing";
         }
         logger.info("Tasks:");
         for (Task task : tasks) {
             logger.info(task);
+
         }
+        return "Displayed All Tasks";
     }
 
     public void editTask(int index, Task updatedTask) {
@@ -149,7 +151,8 @@ public class App {
 
             switch (choice) {
                 case 1:
-                    taskManager.displayTasks();
+                    String output = taskManager.displayTasks();
+                    logger.info(output);
                     break;
                 case 2:
                     logger.info("Enter task title: ");
