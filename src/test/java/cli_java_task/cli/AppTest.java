@@ -4,6 +4,8 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -162,5 +164,18 @@ public class AppTest extends TestCase {
 
         // We do not expect an exception to be thrown, so no assertion here
         // But you can add logging assertions if needed
+    }
+    
+    public void testRun() {
+        // Simulate user input
+        String simulatedInput = "2\nTest Task\nDescription\n2025-04-10\nHigh\n6\n"; // Add a task and exit
+        InputStream in = new ByteArrayInputStream(simulatedInput.getBytes());
+        System.setIn(in);
+
+        App app = new App();
+        app.run();
+
+        // Verify that the task was added (you may need to check the state of the TaskManager)
+        // This part may require additional setup to access the TaskManager state
     }
 }

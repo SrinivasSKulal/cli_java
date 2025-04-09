@@ -132,6 +132,10 @@ class TaskManager {
 
 public class App {
     public static void main(String[] args) {
+        new App().run();
+    }
+
+    public void run(){
         Scanner scanner = new Scanner(System.in);
         TaskManager taskManager = new TaskManager();
         Logger logger = LogManager.getLogger();
@@ -202,5 +206,6 @@ public class App {
 
         logger.info("Exiting Task Management App. Goodbye!");
         scanner.close();
+
     }
 }

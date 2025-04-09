@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cli_java_task.cli.AppTest" time="1.548" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cli_java_task.cli.AppTest" time="0.968" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sonar.host.url" value="http://localhost:9000"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/srinivas/eclipse-workspace/cli/target/test-classes:/home/srinivas/eclipse-workspace/cli/target/classes:/home/srinivas/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/srinivas/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.11/jacoco-maven-plugin-0.8.11.jar:/home/srinivas/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar:/home/srinivas/.m2/repository/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar:/home/srinivas/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/srinivas/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/srinivas/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar:/home/srinivas/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar:/home/srinivas/.m2/repository/org/mockito/mockito-core/4.8.1/mockito-core-4.8.1.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy/1.12.16/byte-buddy-1.12.16.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.16/byte-buddy-agent-1.12.16.jar:/home/srinivas/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
+    <property name="java.class.path" value="/home/srinivas/eclipse-workspace/cli_java/target/test-classes:/home/srinivas/eclipse-workspace/cli_java/target/classes:/home/srinivas/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/srinivas/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.11/jacoco-maven-plugin-0.8.11.jar:/home/srinivas/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar:/home/srinivas/.m2/repository/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar:/home/srinivas/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/srinivas/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/srinivas/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar:/home/srinivas/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar:/home/srinivas/.m2/repository/org/mockito/mockito-core/4.8.1/mockito-core-4.8.1.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy/1.12.16/byte-buddy-1.12.16.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.16/byte-buddy-agent-1.12.16.jar:/home/srinivas/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
     <property name="java.vm.vendor" value="Red Hat, Inc."/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://www.redhat.com/"/>
@@ -13,9 +13,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk/lib"/>
-    <property name="sun.java.command" value="/home/srinivas/eclipse-workspace/cli/target/surefire/surefirebooter-20250406162213459_3.jar /home/srinivas/eclipse-workspace/cli/target/surefire 2025-04-06T16-22-13_315-jvmRun1 surefire-20250406162213459_1tmp surefire_0-20250406162213459_2tmp"/>
+    <property name="sun.java.command" value="/home/srinivas/eclipse-workspace/cli_java/target/surefire/surefirebooter-20250409224641560_3.jar /home/srinivas/eclipse-workspace/cli_java/target/surefire 2025-04-09T22-46-41_468-jvmRun1 surefire-20250409224641560_1tmp surefire_0-20250409224641560_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/srinivas/eclipse-workspace/cli/target/test-classes:/home/srinivas/eclipse-workspace/cli/target/classes:/home/srinivas/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/srinivas/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.11/jacoco-maven-plugin-0.8.11.jar:/home/srinivas/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar:/home/srinivas/.m2/repository/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar:/home/srinivas/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/srinivas/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/srinivas/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar:/home/srinivas/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar:/home/srinivas/.m2/repository/org/mockito/mockito-core/4.8.1/mockito-core-4.8.1.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy/1.12.16/byte-buddy-1.12.16.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.16/byte-buddy-agent-1.12.16.jar:/home/srinivas/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
+    <property name="surefire.test.class.path" value="/home/srinivas/eclipse-workspace/cli_java/target/test-classes:/home/srinivas/eclipse-workspace/cli_java/target/classes:/home/srinivas/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/srinivas/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.11/jacoco-maven-plugin-0.8.11.jar:/home/srinivas/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar:/home/srinivas/.m2/repository/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar:/home/srinivas/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/srinivas/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/srinivas/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar:/home/srinivas/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar:/home/srinivas/.m2/repository/org/mockito/mockito-core/4.8.1/mockito-core-4.8.1.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy/1.12.16/byte-buddy-1.12.16.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.16/byte-buddy-agent-1.12.16.jar:/home/srinivas/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/srinivas"/>
     <property name="user.language" value="en"/>
@@ -23,12 +23,12 @@
     <property name="java.version.date" value="2025-01-21"/>
     <property name="java.home" value="/usr/lib/jvm/java-21-openjdk"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/srinivas/eclipse-workspace/cli"/>
+    <property name="basedir" value="/home/srinivas/eclipse-workspace/cli_java"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/srinivas/eclipse-workspace/cli/target/surefire/surefirebooter-20250406162213459_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/srinivas/eclipse-workspace/cli_java/target/surefire/surefirebooter-20250409224641560_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7"/>
     <property name="user.name" value="srinivas"/>
@@ -44,7 +44,7 @@
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="sonar.token" value="sqp_9e26ebb7a5207e8d96ef47c05af7f47c5f75d409"/>
     <property name="java.version" value="21.0.6"/>
-    <property name="user.dir" value="/home/srinivas/eclipse-workspace/cli"/>
+    <property name="user.dir" value="/home/srinivas/eclipse-workspace/cli_java"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
@@ -57,16 +57,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testsetTask" classname="cli_java_task.cli.AppTest" time="1.499"/>
+  <testcase name="testsetTask" classname="cli_java_task.cli.AppTest" time="0.901"/>
   <testcase name="testToString" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testNoTasks" classname="cli_java_task.cli.AppTest" time="0.001"/>
+  <testcase name="testNoTasks" classname="cli_java_task.cli.AppTest" time="0.003"/>
   <testcase name="testDisplayTasks" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testAddTask" classname="cli_java_task.cli.AppTest" time="0.005"/>
+  <testcase name="testAddTask" classname="cli_java_task.cli.AppTest" time="0.0"/>
   <testcase name="testEditTask" classname="cli_java_task.cli.AppTest" time="0.0"/>
   <testcase name="testEditTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
   <testcase name="testDeleteTask" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testDeleteTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testDeleteTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.001"/>
   <testcase name="testMarkTaskAsComplete" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testMarkTaskAsCompleteWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testMarkTaskAsCompleteWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.003"/>
   <testcase name="testInvalidTaskIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testRun" classname="cli_java_task.cli.AppTest" time="0.015"/>
 </testsuite>
