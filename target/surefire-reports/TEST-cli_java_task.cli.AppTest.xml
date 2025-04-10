@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cli_java_task.cli.AppTest" time="2.083" tests="29" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cli_java_task.cli.AppTest" time="1.971" tests="29" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sonar.host.url" value="http://localhost:9000"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk/lib"/>
-    <property name="sun.java.command" value="/home/srinivas/eclipse-workspace/cli_java/target/surefire/surefirebooter-20250410132907749_3.jar /home/srinivas/eclipse-workspace/cli_java/target/surefire 2025-04-10T13-29-07_347-jvmRun1 surefire-20250410132907749_1tmp surefire_0-20250410132907749_2tmp"/>
+    <property name="sun.java.command" value="/home/srinivas/eclipse-workspace/cli_java/target/surefire/surefirebooter-20250410145806402_3.jar /home/srinivas/eclipse-workspace/cli_java/target/surefire 2025-04-10T14-58-06_112-jvmRun1 surefire-20250410145806402_1tmp surefire_0-20250410145806402_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/srinivas/eclipse-workspace/cli_java/target/test-classes:/home/srinivas/eclipse-workspace/cli_java/target/classes:/home/srinivas/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/srinivas/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/srinivas/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.11/jacoco-maven-plugin-0.8.11.jar:/home/srinivas/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar:/home/srinivas/.m2/repository/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.jar:/home/srinivas/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/srinivas/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/srinivas/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar:/home/srinivas/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar:/home/srinivas/.m2/repository/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar:/home/srinivas/.m2/repository/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar:/home/srinivas/.m2/repository/org/mockito/mockito-core/4.8.1/mockito-core-4.8.1.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy/1.12.16/byte-buddy-1.12.16.jar:/home/srinivas/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.16/byte-buddy-agent-1.12.16.jar:/home/srinivas/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/srinivas/eclipse-workspace/cli_java/target/surefire/surefirebooter-20250410132907749_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/srinivas/eclipse-workspace/cli_java/target/surefire/surefirebooter-20250410145806402_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7"/>
     <property name="user.name" value="srinivas"/>
@@ -57,33 +57,33 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testMarkTaskAsCompleteWithNegativeIndex" classname="cli_java_task.cli.AppTest" time="1.961"/>
+  <testcase name="testMarkTaskAsCompleteWithNegativeIndex" classname="cli_java_task.cli.AppTest" time="1.803"/>
   <testcase name="testsetTask" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testToString" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testToStringnotCompleted" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testNoTasks" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testToString" classname="cli_java_task.cli.AppTest" time="0.002"/>
+  <testcase name="testToStringnotCompleted" classname="cli_java_task.cli.AppTest" time="0.003"/>
+  <testcase name="testNoTasks" classname="cli_java_task.cli.AppTest" time="0.003"/>
   <testcase name="testDisplayTasks" classname="cli_java_task.cli.AppTest" time="0.0"/>
   <testcase name="testAddTask" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testEditTask" classname="cli_java_task.cli.AppTest" time="0.002"/>
-  <testcase name="testEditTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.001"/>
+  <testcase name="testEditTask" classname="cli_java_task.cli.AppTest" time="0.001"/>
+  <testcase name="testEditTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
   <testcase name="testDeleteTask" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testDeleteTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testDeleteTaskWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.002"/>
   <testcase name="testMarkTaskAsComplete" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testMarkTaskAsCompleteWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.001"/>
-  <testcase name="testInvalidTaskIndex" classname="cli_java_task.cli.AppTest" time="0.003"/>
-  <testcase name="testRun" classname="cli_java_task.cli.AppTest" time="0.034"/>
+  <testcase name="testMarkTaskAsCompleteWithInvalidIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testInvalidTaskIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testRun" classname="cli_java_task.cli.AppTest" time="0.041"/>
   <testcase name="testDisplay" classname="cli_java_task.cli.AppTest" time="0.004"/>
-  <testcase name="testmarkCompleted" classname="cli_java_task.cli.AppTest" time="0.003"/>
+  <testcase name="testmarkCompleted" classname="cli_java_task.cli.AppTest" time="0.005"/>
   <testcase name="testdefault" classname="cli_java_task.cli.AppTest" time="0.004"/>
-  <testcase name="testDeleteTaskmain" classname="cli_java_task.cli.AppTest" time="0.004"/>
-  <testcase name="testMainMethod" classname="cli_java_task.cli.AppTest" time="0.002"/>
-  <testcase name="testEditTaskAtZeroIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testDeleteTaskmain" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testMainMethod" classname="cli_java_task.cli.AppTest" time="0.001"/>
+  <testcase name="testEditTaskAtZeroIndex" classname="cli_java_task.cli.AppTest" time="0.002"/>
   <testcase name="testEditTaskAtLastIndex" classname="cli_java_task.cli.AppTest" time="0.001"/>
   <testcase name="testEditTaskWithNegativeIndex" classname="cli_java_task.cli.AppTest" time="0.002"/>
-  <testcase name="testEditTaskWithIndexEqualToSize" classname="cli_java_task.cli.AppTest" time="0.005"/>
-  <testcase name="testDeleteTaskAtZeroIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testEditTaskWithIndexEqualToSize" classname="cli_java_task.cli.AppTest" time="0.001"/>
+  <testcase name="testDeleteTaskAtZeroIndex" classname="cli_java_task.cli.AppTest" time="0.002"/>
   <testcase name="testDeleteTaskAtLastIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
   <testcase name="testDeleteTaskWithNegativeIndex" classname="cli_java_task.cli.AppTest" time="0.001"/>
-  <testcase name="testMarkTaskAsCompleteAtZeroIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
-  <testcase name="testMarkTaskAsCompleteAtLastIndex" classname="cli_java_task.cli.AppTest" time="0.0"/>
+  <testcase name="testMarkTaskAsCompleteAtZeroIndex" classname="cli_java_task.cli.AppTest" time="0.003"/>
+  <testcase name="testMarkTaskAsCompleteAtLastIndex" classname="cli_java_task.cli.AppTest" time="0.003"/>
 </testsuite>
