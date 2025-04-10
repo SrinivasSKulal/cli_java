@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: cli_java_task.cli.AppTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.968 s -- in cli_java_task.cli.AppTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.040 s -- in cli_java_task.cli.AppTest
