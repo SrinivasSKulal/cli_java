@@ -98,7 +98,7 @@ class TaskManager {
     }
 
     public void editTask(int index, Task updatedTask) {
-<span class="pc bpc" id="L101" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
+<span class="fc bfc" id="L101" title="All 4 branches covered.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
 <span class="fc" id="L102">            tasks.set(index, updatedTask);</span>
 <span class="fc" id="L103">            logger.info(&quot;Task updated successfully.&quot;);</span>
         } else {
@@ -107,7 +107,7 @@ class TaskManager {
 <span class="fc" id="L107">    }</span>
 
     public void deleteTask(int index) {
-<span class="pc bpc" id="L110" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
+<span class="fc bfc" id="L110" title="All 4 branches covered.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
 <span class="fc" id="L111">            tasks.remove(index);</span>
 <span class="fc" id="L112">            logger.info(&quot;Task deleted successfully.&quot;);</span>
         } else {
@@ -116,7 +116,7 @@ class TaskManager {
 <span class="fc" id="L116">    }</span>
 
     public void markTaskAsComplete(int index) {
-<span class="pc bpc" id="L119" title="1 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
+<span class="fc bfc" id="L119" title="All 4 branches covered.">        if (index &gt;= 0 &amp;&amp; index &lt; tasks.size()) {</span>
 <span class="fc" id="L120">            Task task = tasks.get(index);</span>
 <span class="fc" id="L121">            task.setCompleted(true);</span>
 <span class="fc" id="L122">            tasks.set(index, task);</span>

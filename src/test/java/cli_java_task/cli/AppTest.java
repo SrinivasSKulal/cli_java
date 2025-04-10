@@ -4,15 +4,14 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import static org.mockito.Mockito.reset;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 import java.util.List;
 
 /**
@@ -181,33 +180,17 @@ public class AppTest extends TestCase {
         InputStream in = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(in);
 
-        // Create a temporary file to capture output
-        // File outputFile = File.createTempFile("app_output", ".txt");
-        // outputFile.deleteOnExit(); // Ensure the file is deleted on exit
-
-        // Redirect System.out to write to the file
-        // PrintStream fileOut = new PrintStream(new FileOutputStream(outputFile));
-        // PrintStream originalOut = System.out; // Save the original System.out
-        // System.setOut(fileOut);
+       
 
         // Run the application
         App app = new App();
         app.run();
-
-        // Restore original System.out
-        // System.setOut(originalOut);
-        // fileOut.close(); // Close the file output stream
-
-        // Read the contents of the file
-        // String output = new String(Files.readAllBytes(Paths.get(outputFile.getAbsolutePath())));
 
         // Assert that the output contains expected strings
         //assertTrue(output.contains("Task added successfully.")); // Check if the task was added
         //assertTrue(output.contains("Exiting Task Management App. Goodbye!")); // Check if the app exited
         // assertEquals("No tasks found.,", output);
 
-        // Verify that the task was added (you may need to check the state of the TaskManager)
-        // This part may require additional setup to access the TaskManager state
     }
     public void testDisplay(){
         String simulatedInpuString ="1\n6\n";
@@ -287,7 +270,7 @@ public class AppTest extends TestCase {
             App.main(new String[]{});
     
             // Get captured output
-            String output = testOut.toString();
+            // String output = testOut.toString();
     
             // Verify all key operations were performed
             // assertTrue(output.contains("Task Management Menu"));
@@ -303,4 +286,98 @@ public class AppTest extends TestCase {
             System.setOut(originalOut);
         }
     }
+    public void testEditTaskAtZeroIndex() {
+        Task task = new Task("Test Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        Task updatedTask = new Task("Updated Task", "Updated Description", "2025-04-15", "Medium");
+        taskManager.editTask(0, updatedTask);
+        
+        assertEquals("Updated Task", taskManager.getTasks().get(0).getTitle());
+    }
+    
+    public void testEditTaskAtLastIndex() {
+        // Add multiple tasks
+        taskManager.addTask(new Task("Task 1", "Description 1", "2025-04-10", "High"));
+        taskManager.addTask(new Task("Task 2", "Description 2", "2025-04-11", "Medium"));
+        
+        Task updatedTask = new Task("Updated Last", "Updated Description", "2025-04-15", "Low");
+        taskManager.editTask(taskManager.getTasks().size() - 1, updatedTask);
+        
+        assertEquals("Updated Last", taskManager.getTasks().get(taskManager.getTasks().size() - 1).getTitle());
+    }
+    
+    public void testEditTaskWithNegativeIndex() {
+        Task task = new Task("Original Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        Task updatedTask = new Task("Should Not Update", "New Description", "2025-04-15", "Low");
+        taskManager.editTask(-1, updatedTask);
+        
+        // Verify original task remains unchanged
+        assertEquals("Original Task", taskManager.getTasks().get(0).getTitle());
+    }
+    
+    public void testEditTaskWithIndexEqualToSize() {
+        Task task = new Task("Original Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        Task updatedTask = new Task("Should Not Update", "New Description", "2025-04-15", "Low");
+        taskManager.editTask(taskManager.getTasks().size(), updatedTask);
+        
+        // Verify original task remains unchanged
+        assertEquals("Original Task", taskManager.getTasks().get(0).getTitle());
+    }
+    public void testDeleteTaskAtZeroIndex() {
+        Task task = new Task("Task to Delete", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        taskManager.deleteTask(0);
+        assertTrue(taskManager.getTasks().isEmpty());
+    }
+    
+    public void testDeleteTaskAtLastIndex() {
+        // Add multiple tasks
+        taskManager.addTask(new Task("Task 1", "Description 1", "2025-04-10", "High"));
+        taskManager.addTask(new Task("Task 2", "Description 2", "2025-04-11", "Medium"));
+        
+        taskManager.deleteTask(taskManager.getTasks().size() - 1);
+        assertEquals(1, taskManager.getTasks().size());
+        assertEquals("Task 1", taskManager.getTasks().get(0).getTitle());
+    }
+    
+    public void testDeleteTaskWithNegativeIndex() {
+        Task task = new Task("Original Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        taskManager.deleteTask(-1);
+        assertEquals(1, taskManager.getTasks().size()); // Task should not be deleted
+        assertEquals("Original Task", taskManager.getTasks().get(0).getTitle());
+    }
+    
+    public void testMarkTaskAsCompleteAtZeroIndex() {
+        Task task = new Task("Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        taskManager.markTaskAsComplete(0);
+        assertTrue(taskManager.getTasks().get(0).isCompleted());
+    }
+    
+    public void testMarkTaskAsCompleteAtLastIndex() {
+        taskManager.addTask(new Task("Task 1", "Description 1", "2025-04-10", "High"));
+        taskManager.addTask(new Task("Task 2", "Description 2", "2025-04-11", "Medium"));
+        
+        taskManager.markTaskAsComplete(taskManager.getTasks().size() - 1);
+        assertTrue(taskManager.getTasks().get(taskManager.getTasks().size() - 1).isCompleted());
+        assertFalse(taskManager.getTasks().get(0).isCompleted()); // First task should remain uncompleted
+    }
+    
+    public void testMarkTaskAsCompleteWithNegativeIndex() {
+        Task task = new Task("Task", "Description", "2025-04-10", "High");
+        taskManager.addTask(task);
+        
+        taskManager.markTaskAsComplete(-1);
+        assertFalse(taskManager.getTasks().get(0).isCompleted()); // Task should remain uncompleted
+    }
+    
 }
