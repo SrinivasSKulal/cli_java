@@ -51,11 +51,23 @@ public class AppTest extends TestCase {
     // tostring() test
     public void testToString() {
         Task task = new Task("Test Title", "Test Description", "2025-04-10", "Low");
+        task.setCompleted(true);
         String expectedString =  "Title: " +task.getTitle() + "\n"
         + "Description: " + task.getDescription() + "\n"
         + "Due Date: " + task.getDueDate() + "\n"
         + "Priority: " + task.getPriority() + "\n"
         + "Status: " + (task.isCompleted() ? "Completed" : "Not Completed") + "\n"; 
+        // task.setCompleted(true);
+        assertEquals(expectedString, task.toString());
+    }
+    public void testToStringnotCompleted() {
+        Task task = new Task("Test Title", "Test Description", "2025-04-10", "Low");
+        String expectedString =  "Title: " +task.getTitle() + "\n"
+        + "Description: " + task.getDescription() + "\n"
+        + "Due Date: " + task.getDueDate() + "\n"
+        + "Priority: " + task.getPriority() + "\n"
+        + "Status: " + (task.isCompleted() ? "Completed" : "Not Completed") + "\n"; 
+        
         assertEquals(expectedString, task.toString());
     }
     //no tasks test

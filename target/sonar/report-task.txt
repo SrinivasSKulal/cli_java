@@ -2,5 +2,5 @@ projectKey=cli_java
 serverUrl=http://localhost:9000
 serverVersion=25.3.0.104237
 dashboardUrl=http://localhost:9000/dashboard?id=cli_java
-ceTaskId=49631421-4f80-4378-9f16-1152305ae72b
-ceTaskUrl=http://localhost:9000/api/ce/task?id=49631421-4f80-4378-9f16-1152305ae72b
+ceTaskId=eb5b102d-d34e-4353-9156-40b97ed58f5c
+ceTaskUrl=http://localhost:9000/api/ce/task?id=eb5b102d-d34e-4353-9156-40b97ed58f5c
